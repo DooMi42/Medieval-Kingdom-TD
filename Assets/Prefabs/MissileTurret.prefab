@@ -17,6 +17,12 @@ PrefabInstance:
       propertyPath: fireRate
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8588092781739743330, guid: 43ff5351a65396b40ae58f8684edc7a1,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6066756957235479999, guid: 03256a3aa2455e04bb0626c13ed7d6dc,
+        type: 3}
     - target: {fileID: 8588092781739743333, guid: 43ff5351a65396b40ae58f8684edc7a1,
         type: 3}
       propertyPath: m_Name
