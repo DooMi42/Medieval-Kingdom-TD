@@ -16,12 +16,9 @@ public class Node : MonoBehaviour
 
     private Color startColor;
 
-    GameObject turretSpawnLocation;
-
     BuildManager buildManager;
     void Start()
     {
-        turretSpawnLocation = GameObject.Find("TurretsSpawnHere");
 
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;

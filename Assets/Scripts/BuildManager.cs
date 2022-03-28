@@ -6,9 +6,16 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
+    GameObject turretSpawnLocation;
+    GameObject buildEffectSpawnLocation;
     void Awake()
     {
         instance = this;
+    }
+    private void Start()
+    {
+        turretSpawnLocation = GameObject.Find("TurretsSpawnHere");
+        buildEffectSpawnLocation = GameObject.Find("BuildEffectSpawnHere");
     }
 
     public GameObject standardTurretPrefab;
@@ -31,10 +38,10 @@ public class BuildManager : MonoBehaviour
 
         PlayerStats.Money -= turretToBuild.cost;
 
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity, turretSpawnLocation.transform);
         node.turret = turret;
 
-        GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity);
+        GameObject effect = (GameObject)Instantiate(buildEffect, node.GetBuildPosition(), Quaternion.identity, buildEffectSpawnLocation.transform);
         Destroy(effect, 5f);
 
         Debug.Log("Turret build! Money left:" + PlayerStats.Money);
