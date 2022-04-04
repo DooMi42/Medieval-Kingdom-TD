@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5333071349747820680}
   - component: {fileID: 5333071349747820683}
   - component: {fileID: 877247505}
+  - component: {fileID: 1307573450072975177}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -113,3 +114,15 @@ MonoBehaviour:
   moneyGain: 25
   deathEffect: {fileID: 4489405676306780259, guid: d260bc39bca5c3947b7ae424589887f8,
     type: 3}
+--- !u!114 &1307573450072975177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5333071349747820682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4d196c4ed63b2241b59f17069930825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

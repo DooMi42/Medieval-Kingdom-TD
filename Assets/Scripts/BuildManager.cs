@@ -18,9 +18,6 @@ public class BuildManager : MonoBehaviour
         buildEffectSpawnLocation = GameObject.Find("BuildEffectSpawnHere");
     }
 
-    public GameObject standardTurretPrefab;
-    public GameObject anotherTurretPrefab;
-
     public GameObject buildEffect;
 
     private TurrentBlueprint turretToBuild;
