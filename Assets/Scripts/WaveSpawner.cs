@@ -29,12 +29,13 @@ public class WaveSpawner : MonoBehaviour
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        roundCounterText.text = waveIndex.ToString() + "/11";
+        roundCounterText.text = PlayerStats.Rounds.ToString();
     }
 
     IEnumerator SpawnWave()
     {
         waveIndex++;
+        PlayerStats.Rounds++;
 
         for (int i = 0; i < waveIndex; i++)
         {
