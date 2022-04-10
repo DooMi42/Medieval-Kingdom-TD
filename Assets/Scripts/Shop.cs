@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    public TurrentBlueprint standardTurret;
-    public TurrentBlueprint missileTurret;
-    public TurrentBlueprint mageTower;
-    public TurrentBlueprint laserTower;
+    public TurretBlueprint standardTurret;
+    public TurretBlueprint missileTurret;
+    public TurretBlueprint mageTower;
 
     BuildManager buildManager;
 
@@ -27,9 +26,5 @@ public class Shop : MonoBehaviour
     public void SelectMageTower()
     {
         buildManager.SelectTurretToBuild(mageTower);
-    }
-    public void SelectLaserTower()
-    {
-        buildManager.SelectTurretToBuild(laserTower);
     }
 }

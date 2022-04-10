@@ -12,14 +12,17 @@ public class GameOver : MonoBehaviour
     void OnEnable()
     {
         roundsText.text = PlayerStats.Rounds.ToString();
+        Time.timeScale = 0f;
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
     }
     public void Menu()
     {
-        Debug.Log("GO TO MENU WHEN MENU IS DONE");
+        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
 }

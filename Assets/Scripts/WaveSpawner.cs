@@ -29,7 +29,7 @@ public class WaveSpawner : MonoBehaviour
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        roundCounterText.text = PlayerStats.Rounds.ToString();
+        roundCounterText.text = "Round " + PlayerStats.Rounds.ToString();
     }
 
     IEnumerator SpawnWave()
