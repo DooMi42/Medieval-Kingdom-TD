@@ -7,17 +7,9 @@ using TMPro;
 
 public class GameOver : MonoBehaviour
 {
-    public TextMeshProUGUI roundsText;
-
     public string menuSceneName = "MainMenu";
 
     public SceneFader sceneFader;
-
-    void OnEnable()
-    {
-        roundsText.text = PlayerStats.Rounds.ToString();
-        Time.timeScale = 0f;
-    }
 
     public void Restart()
     {
