@@ -4,9 +4,9 @@ using UnityEngine.UI;
 using TMPro;
 public class WaveSpawner : MonoBehaviour
 {
-    public static int EnemiesAlive = 0;
+    public static int EnemiesAlive = 0; 
 
-    public Wave[] waves;
+    public WaveAction[] waves;
 
     [Header("Enemy Stuff")]
     public Transform enemySpawnLocation;
@@ -17,10 +17,12 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 2f;
 
     public TextMeshProUGUI roundCounterText;
+    public float maxRound = 0;
 
     public GameManager gameManager;
 
     private int waveIndex = 0;
+
     void Update()
     {
         if(EnemiesAlive > 0)
@@ -45,25 +47,34 @@ public class WaveSpawner : MonoBehaviour
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        roundCounterText.text = "Round " + PlayerStats.Rounds.ToString();
+        roundCounterText.text = "Round " + PlayerStats.Rounds + "/" + maxRound.ToString();
+
     }
     IEnumerator SpawnWave()
     {
         PlayerStats.Rounds++;
 
-        Wave wave = waves[waveIndex];
-
-        EnemiesAlive = wave.count;
-
-        for (int i = 0; i < wave.count; i++)
+        if (waves.Length > waveIndex)
         {
-            SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f / wave.rate);
+            WaveAction wave = waves[waveIndex];
+            for (int z = 0; z < wave.enemies.Length; z++)
+            {
+                for (int i = 0; i < wave.enemies[z].count; i++)
+                {
+                    SpawnEnemy(wave.enemies[z].enemy);
+                    yield return new WaitForSeconds(1f / wave.spawnRate);
+                }
+            }
+            waveIndex++;
         }
-        waveIndex++;
+        else
+        {
+            this.enabled = false;
+         }
     }
     void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation, enemySpawnLocation.transform);
+         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation, enemySpawnLocation.transform);
+        EnemiesAlive++;
     }
 }
