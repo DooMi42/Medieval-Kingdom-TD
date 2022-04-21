@@ -24,6 +24,8 @@ public class BuildManager : MonoBehaviour
 
     public void SelectNode(Node node)
     {
+
+
         if (selectedNode == node)
         {
             DeselectNode();
