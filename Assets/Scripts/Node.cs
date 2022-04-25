@@ -24,6 +24,7 @@ public class Node : MonoBehaviour
     private Color startColor;
 
     BuildManager buildManager;
+
     void Start()
     {
         turretSpawnLocation = GameObject.Find("TurretsSpawnHere");
@@ -33,7 +34,6 @@ public class Node : MonoBehaviour
         startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
-
     }
 
     public Vector3 GetBuildPosition()
@@ -59,23 +59,23 @@ public class Node : MonoBehaviour
     }
     void BuildTurret (TurretBlueprint blueprint)
     {
-            if (PlayerStats.Money < blueprint.cost)
-            {
-                Debug.Log("Not enough money to build that!");
-                return;
-            }
+        if (PlayerStats.Money < blueprint.cost)
+        {
+            Debug.Log("Not enough money to build that!");
+            return;
+        }
 
-            PlayerStats.Money -= blueprint.cost;
+        PlayerStats.Money -= blueprint.cost;
 
-            GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity, turretSpawnLocation.transform);
-            turret = _turret;
+        GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity, turretSpawnLocation.transform);
+        turret = _turret;
 
-            turretBlueprint = blueprint;
+        turretBlueprint = blueprint;
 
-            GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity, buildEffectSpawnLocation.transform);
-            Destroy(effect, 5f);
+        GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity, buildEffectSpawnLocation.transform);
+        Destroy(effect, 5f);
 
-            Debug.Log("Turret build!");
+        Debug.Log("Turret build!");
     }
     public void UpgradeTurret()
     {
@@ -134,5 +134,4 @@ public class Node : MonoBehaviour
     {
         rend.material.color = startColor;
     }
-
 }
