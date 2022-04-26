@@ -23,6 +23,10 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
+    void OnEnable()
+    {
+        EnemiesAlive = 0;
+    }
     void Update()
     {
         if(EnemiesAlive > 0)
@@ -48,7 +52,6 @@ public class WaveSpawner : MonoBehaviour
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
         roundCounterText.text = "Round " + PlayerStats.Rounds + "/" + maxRound.ToString();
-
     }
     IEnumerator SpawnWave()
     {

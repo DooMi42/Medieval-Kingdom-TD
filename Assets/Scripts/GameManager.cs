@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     private static bool gameIsOver;
 
     public GameObject gameOverUI;
@@ -20,7 +19,7 @@ public class GameManager : MonoBehaviour
         if (gameIsOver)
             return;
 
-        if(PlayerStats.Lives <= 0)
+        if (PlayerStats.Lives <= 0)
         {
             EndGame();
         }
@@ -28,9 +27,7 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         gameIsOver = true;
-
         gameOverUI.SetActive(true);
-
     }
     public void WinLevel()
     {

@@ -22,7 +22,7 @@ public class SceneFader : MonoBehaviour
     {
         float t = 1f;
 
-        while(t > 0)
+        while(t > 0f)
         {
             t -= Time.deltaTime;
             float a = curve.Evaluate(t);
