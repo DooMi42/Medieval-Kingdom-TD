@@ -364,7 +364,7 @@ MonoBehaviour:
   startSpeed: 10
   speed: 30
   startHealth: 60
-  moneyGain: 35
+  moneyGain: 12
   deathEffect: {fileID: 4489405676306780259, guid: 8df413233abd4ee42b223edf55cf117b,
     type: 3}
   healthBar: {fileID: 1453602448}
