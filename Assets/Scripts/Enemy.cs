@@ -53,5 +53,6 @@ public class Enemy : MonoBehaviour
         WaveSpawner.EnemiesAlive--;
         
         Destroy(gameObject);
+        FindObjectOfType<AudioManager>().Play("EnemyDestroyed");
     }
 }

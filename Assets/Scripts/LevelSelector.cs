@@ -22,5 +22,6 @@ public class LevelSelector : MonoBehaviour
     public void Select(string levelName)
     {
         fader.FadeTo(levelName);
+        FindObjectOfType<AudioManager>().StopPlay("MainMenuMusic");
     }
 }

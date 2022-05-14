@@ -14,7 +14,7 @@ public class WaveSpawner : MonoBehaviour
 
     [Header("Canvas Stuff")]
     public float timeBetweenWaves = 5f;
-    private float countdown = 2f;
+    private float countdown = 5f;
 
     public TextMeshProUGUI roundCounterText;
     public float maxRound = 0;
@@ -26,6 +26,10 @@ public class WaveSpawner : MonoBehaviour
     void OnEnable()
     {
         EnemiesAlive = 0;
+    }
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("GameMusic");
     }
     void Update()
     {

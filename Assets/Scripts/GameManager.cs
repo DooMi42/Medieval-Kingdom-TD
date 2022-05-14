@@ -27,11 +27,13 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         gameIsOver = true;
+        FindObjectOfType<AudioManager>().Play("YouLose");
         gameOverUI.SetActive(true);
     }
     public void WinLevel()
     {
         gameIsOver = true;
+        FindObjectOfType<AudioManager>().Play("YouWin");
         completeLevelUI.SetActive(true);
     }
 }

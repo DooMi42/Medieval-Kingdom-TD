@@ -13,9 +13,11 @@ public class GameOver : MonoBehaviour
     public void Restart()
     {
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
+        FindObjectOfType<AudioManager>().StopPlay("GameMusic");
     }
     public void Menu()
     {
         sceneFader.FadeTo(menuSceneName);
+        FindObjectOfType<AudioManager>().StopPlay("GameMusic");
     }
 }
