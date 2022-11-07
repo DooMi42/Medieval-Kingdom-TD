@@ -1,6 +1,6 @@
 | Medieval Kingdom TD |
 
-Medieval Kingdom TD is my first 3D demo game.
+Medieval Kingdom TD is my first 3D demo game
 
 It is a project made for school.
 
