@@ -1,6 +1,7 @@
 Medieval Kingdom TD
 
-Medieval Kingdom TD is my first "big" demo game. 
+Medieval Kingdom TD is my first "big" demo game.
+
 It is a project made for school.
 
 Down here is download link for the latest build:
